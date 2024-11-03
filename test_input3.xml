@@ -1,0 +1,16 @@
+<config>
+    <comment>
+Тест 3
+    </comment>
+
+    <const name="a" value="75"/>
+    <const name="b" value="60"/>
+    
+    <dictionary>
+        <entry name="f" value="wasd"/>
+        <entry name="t" value="qwerty"/>
+    </dictionary>
+    
+    <expr value="|mod a 10|"/>
+    <expr value="|max b 50 30|"/>
+</config>

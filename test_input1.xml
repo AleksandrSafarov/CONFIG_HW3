@@ -1,0 +1,15 @@
+<config>
+<comment>
+Тест 1
+    </comment>
+
+    <const name="x" value="1000"/>
+    <const name="y" value="300"/>
+    
+    <dictionary>
+        <entry name="z" value="wasd"/>
+        <entry name="w" value="12345"/>
+    </dictionary>
+    
+    <expr value="|max x y 500|"/>
+</config>

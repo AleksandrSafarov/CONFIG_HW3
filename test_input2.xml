@@ -1,0 +1,17 @@
+<config>
+    <comment>
+Тест 2
+    </comment>
+
+    <const name="a" value="100"/>
+    <const name="b" value="20"/>
+    
+    <dictionary>
+        <entry name="c" value="wasd"/>
+        <entry name="d" value="5"/>
+        <entry name="e" value="150"/>
+    </dictionary>
+    
+    <expr value="|* a b|"/>
+    <expr value="|+ a 10|"/>
+</config>

@@ -1,0 +1,23 @@
+<config>
+    <!-- Многострочный комментарий -->
+    <comment>
+Это многострочный
+комментарий
+    </comment>
+    
+    <!-- Объявление констант -->
+    <const name="x" value="10"/>
+    <const name="y" value="20"/>
+    
+    <!-- Словарь с именами и значениями -->
+    <dictionary>
+        <entry name="alpha" value="100"/>
+        <entry name="beta" value="200"/>
+        <entry name="gamma" value="300"/>
+    </dictionary>
+    
+    <!-- Выражения для вычислений -->
+    <expr value="|+ x 5|"/>
+    <expr value="|* y 2|"/>
+    <expr value="|max x y 15|"/>
+</config>
