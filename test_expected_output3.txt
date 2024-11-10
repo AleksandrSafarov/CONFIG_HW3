@@ -1,13 +1,13 @@
 {{!--
 
-Тест 3
+        Параметры автомобиля
     
 --}}
-(def a 75)
-(def b 60)
+(def fuelcapacity 75)
+(def enginepower 60)
 $[
-  f : wasd,
-  t : qwerty,
+  transmissiontype : automatic,
+  interiormaterial : leather,
 ]
-# Вычислено значение выражения |mod a 10|: 5
-# Вычислено значение выражения |max b 50 30|: 60
+# Вычислено значение выражения |mod fuelcapacity 10|: 5
+# Вычислено значение выражения |max enginepower 50 30|: 60

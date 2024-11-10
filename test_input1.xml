@@ -1,15 +1,15 @@
 <config>
-<comment>
-Тест 1
+    <comment>
+        Настройки сети
     </comment>
 
-    <const name="x" value="1000"/>
-    <const name="y" value="300"/>
+    <const name="bandwidthlimit" value="1000"/>
+    <const name="connectiontimeout" value="300"/>
     
     <dictionary>
-        <entry name="z" value="wasd"/>
-        <entry name="w" value="12345"/>
+        <entry name="protocol" value="HTTP"/>
+        <entry name="port" value="8080"/>
     </dictionary>
     
-    <expr value="|max x y 500|"/>
+    <expr value="|max bandwidthlimit connectiontimeout 500|"/>
 </config>

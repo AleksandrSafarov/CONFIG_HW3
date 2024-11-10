@@ -1,14 +1,14 @@
 {{!--
 
-Тест 2
+        Финансовые параметры
     
 --}}
-(def a 100)
-(def b 20)
+(def basesalary 100)
+(def bonuspercentage 20)
 $[
-  c : wasd,
-  d : 5,
-  e : 150,
+  currency : USD,
+  taxrate : 5,
+  maxbonus : 150,
 ]
-# Вычислено значение выражения |* a b|: 2000
-# Вычислено значение выражения |+ a 10|: 110
+# Вычислено значение выражения |* base_salary bonuspercentage|: base_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salary
+# Вычислено значение выражения |+ basesalary 10|: 110

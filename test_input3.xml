@@ -1,16 +1,16 @@
 <config>
     <comment>
-Тест 3
+        Параметры автомобиля
     </comment>
 
-    <const name="a" value="75"/>
-    <const name="b" value="60"/>
+    <const name="fuelcapacity" value="75"/>
+    <const name="enginepower" value="60"/>
     
     <dictionary>
-        <entry name="f" value="wasd"/>
-        <entry name="t" value="qwerty"/>
+        <entry name="transmissiontype" value="automatic"/>
+        <entry name="interiormaterial" value="leather"/>
     </dictionary>
     
-    <expr value="|mod a 10|"/>
-    <expr value="|max b 50 30|"/>
+    <expr value="|mod fuelcapacity 10|"/>
+    <expr value="|max enginepower 50 30|"/>
 </config>
