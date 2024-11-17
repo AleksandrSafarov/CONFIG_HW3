@@ -18,9 +18,9 @@ def evaluate_expression(expr, constants):
         raise ValueError(f"Неверное выражение: {expr}")
     operation, *operands = tokens
 
-    # Преобразуем операнды
+    # Подстановка значений констант и элементов словаря
     operands = [constants.get(op, op) for op in operands]
-    # Преобразуем операнды в целые числа, если это возможно
+    # Преобразование операндов в числа, если это возможно
     operands = [int(op) if isinstance(op, str) and op.isdigit() else op for op in operands]
 
     if operation == '+':
@@ -51,7 +51,7 @@ def xml_to_config(tree):
 
     for elem in tree.iter():
         if elem.tag == 'comment':
-            output.append(f"{COMMENT_START}\n{elem.text}\n{COMMENT_END}")
+            output.append(f"{COMMENT_START}\n{elem.text.strip()}\n{COMMENT_END}")
         
         elif elem.tag == 'const':
             name = elem.get('name')
@@ -60,24 +60,30 @@ def xml_to_config(tree):
                 raise ValueError(f"Недопустимое имя константы: {name}")
             if not re.match(NUMBER_REGEX, value):
                 raise ValueError(f"Недопустимое значение константы: {value}")
-            output.append(f"(def {name} {value})")
             constants[name] = int(value)
+            output.append(f"(def {name} {value})")
 
         elif elem.tag == 'dictionary':
-            output.append("$[")
+            dictionary_lines = ["$["]
             for entry in elem:
                 if entry.tag == 'entry':
                     entry_name = entry.get('name')
                     entry_value = entry.get('value')
                     if not re.match(NAME_REGEX, entry_name):
                         raise ValueError(f"Недопустимое имя словаря: {entry_name}")
-                    output.append(f"  {entry_name} : {entry_value},")
-            output.append("]")
+                    if not re.match(NUMBER_REGEX, entry_value):
+                        raise ValueError(f"Недопустимое значение словаря: {entry_value}")
+                    
+                    # Сохранение в словарь для использования в выражениях
+                    constants[entry_name] = int(entry_value)
+                    dictionary_lines.append(f"  {entry_name} : {entry_value},")
+            dictionary_lines.append("]")
+            output.extend(dictionary_lines)
 
         elif elem.tag == 'expr':
             expr = elem.get('value')
             result = evaluate_expression(expr, constants)
-            output.append(f"# Вычислено значение выражения {expr}: {result}")
+            output.append(f"{COMMENT_START} {expr} : {result} {COMMENT_END}")
 
     return "\n".join(output)
 
@@ -91,13 +97,10 @@ def main():
     with open(args.input_file, 'r', encoding="utf-8") as f:
         input_xml = f.read()
 
-
-
     # Разбор XML и преобразование
     tree = parse_xml(input_xml)
     config_output = xml_to_config(tree)
 
-    # Запись в выходной файл
     # Запись в выходной файл
     with open(args.output_file, 'w', encoding="utf-8") as f:
         f.write(config_output)

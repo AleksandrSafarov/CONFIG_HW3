@@ -7,8 +7,8 @@
     <const name="enginepower" value="60"/>
     
     <dictionary>
-        <entry name="transmissiontype" value="automatic"/>
-        <entry name="interiormaterial" value="leather"/>
+        <entry name="transmissiontype" value="2"/>
+        <entry name="interiormaterial" value="5"/>
     </dictionary>
     
     <expr value="|mod fuelcapacity 10|"/>

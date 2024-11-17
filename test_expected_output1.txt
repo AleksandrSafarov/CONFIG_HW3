@@ -1,12 +1,10 @@
 {{!--
-
-        Настройки сети
-    
+Настройки сети
 --}}
 (def bandwidthlimit 1000)
 (def connectiontimeout 300)
 $[
-  protocol : HTTP,
+  protocol : 123,
   port : 8080,
 ]
-# Вычислено значение выражения |max bandwidthlimit connectiontimeout 500|: 1000
+{{!-- |max bandwidthlimit connectiontimeout 500| : 1000 --}}

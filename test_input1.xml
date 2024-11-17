@@ -7,7 +7,7 @@
     <const name="connectiontimeout" value="300"/>
     
     <dictionary>
-        <entry name="protocol" value="HTTP"/>
+        <entry name="protocol" value="123"/>
         <entry name="port" value="8080"/>
     </dictionary>
     

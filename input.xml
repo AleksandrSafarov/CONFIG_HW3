@@ -17,7 +17,7 @@
     </dictionary>
     
     <!-- Выражения для вычислений -->
-    <expr value="|+ x 5|"/>
+    <expr value="|+ alpha 5|"/>
     <expr value="|* y 2|"/>
     <expr value="|max x y 15|"/>
 </config>

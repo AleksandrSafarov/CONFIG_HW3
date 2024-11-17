@@ -1,13 +1,11 @@
 {{!--
-
-        Параметры автомобиля
-    
+Параметры автомобиля
 --}}
 (def fuelcapacity 75)
 (def enginepower 60)
 $[
-  transmissiontype : automatic,
-  interiormaterial : leather,
+  transmissiontype : 2,
+  interiormaterial : 5,
 ]
-# Вычислено значение выражения |mod fuelcapacity 10|: 5
-# Вычислено значение выражения |max enginepower 50 30|: 60
+{{!-- |mod fuelcapacity 10| : 5 --}}
+{{!-- |max enginepower 50 30| : 60 --}}

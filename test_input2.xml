@@ -7,11 +7,11 @@
     <const name="bonuspercentage" value="20"/>
     
     <dictionary>
-        <entry name="currency" value="USD"/>
+        <entry name="currency" value="1"/>
         <entry name="taxrate" value="5"/>
         <entry name="maxbonus" value="150"/>
     </dictionary>
     
-    <expr value="|* base_salary bonuspercentage|"/>
+    <expr value="|* basesalary 2|"/>
     <expr value="|+ basesalary 10|"/>
 </config>

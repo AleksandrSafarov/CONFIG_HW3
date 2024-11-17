@@ -1,14 +1,12 @@
 {{!--
-
-        Финансовые параметры
-    
+Финансовые параметры
 --}}
 (def basesalary 100)
 (def bonuspercentage 20)
 $[
-  currency : USD,
+  currency : 1,
   taxrate : 5,
   maxbonus : 150,
 ]
-# Вычислено значение выражения |* base_salary bonuspercentage|: base_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salarybase_salary
-# Вычислено значение выражения |+ basesalary 10|: 110
+{{!-- |* basesalary 2| : 200 --}}
+{{!-- |+ basesalary 10| : 110 --}}
